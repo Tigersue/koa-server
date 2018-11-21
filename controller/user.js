@@ -6,7 +6,7 @@ const{query}=require('../utils/async-db')
 
 module.exports = {
 	async newUser(){},
-	async newUsers(){},
+	// async newUsers(){},
 	//查-返回
 	async getAllUsers(ctx){
 		let selectAllSql='SELECT * FROM user',
