@@ -5,13 +5,17 @@ const bodyParser = require('koa-bodyparser')
 app.use(bodyParser())
 const cors = require('koa2-cors');
 app.use(cors());
+const path = require('path')
+const static = require('koa-static')
+const staticPath = '../static/to-do-list'
+app.use(static(
+	path.join( __dirname,  staticPath)
+))
 
-// const staticPath = '../static'
-// app.use(Static(
-// 	path.join( __dirname,  staticPath)
-// ))
 
-
+// app.use( async ( ctx ) => {
+// 	ctx.body = staticPath
+// })
 
 app
 	.use(router.routes())
